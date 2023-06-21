@@ -148,6 +148,16 @@
     <ClCompile Include="20230619_StopWatch.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="20230621_QueueTp2.cpp" />
+    <ClCompile Include="20230621_tv.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="20230621_Q1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="20230621_예외처리.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Circle2D.cpp" />
     <ClCompile Include="Circle2D.h" />
     <ClCompile Include="GeometricObject.cpp" />
@@ -157,6 +167,7 @@
     <ClCompile Include="MyPoint.cpp" />
     <ClCompile Include="Rectangle2D.cpp" />
     <ClCompile Include="StopWatch.cpp" />
+    <ClCompile Include="tv.cpp" />
     <ClCompile Include="worker0.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +175,11 @@
     <ClInclude Include="GeometricObject.h" />
     <ClInclude Include="MyPoint.h" />
     <ClInclude Include="QueueTp.h" />
+    <ClInclude Include="QueueTp2.h" />
     <ClInclude Include="Rectangle2D.h" />
     <ClInclude Include="stacktp.h" />
     <ClInclude Include="StopWatch.h" />
+    <ClInclude Include="tv.h" />
     <ClInclude Include="worker0.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
