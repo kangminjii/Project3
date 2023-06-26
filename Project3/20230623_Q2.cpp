@@ -24,7 +24,6 @@ Q3. 사용자로부터 소스 파일의 개수, 소스 파일의 이름, 목적 파일의 이름을
 		Combine Done.
 */
 
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -33,101 +32,94 @@ using namespace std;
 
 int main()
 {
-	// # Q2
-	/*string filename;
-	int filesize;
+    // # Q2
+    /*string filename;
+    int filesize;
 
-	cout << "Enter file name : ";
-	cin >> filename;
-	cout << "Enter file size : ";
-	cin >> filesize;
+    cout << "Enter file name : ";
+    cin >> filename;
+    cout << "Enter file size : ";
+    cin >> filesize;
 
-	fstream file;
-	file.open(filename, ios_base::in | ios_base::out | ios_base::binary);
-	file.seekg(0, ios_base::end);
+    fstream file;
+    file.open(filename, ios_base::in | ios_base::out | ios_base::binary);
+    file.seekg(0, ios_base::end);
 
-	int size = file.tellg();
-	int count = size / filesize;
-	int remain = size % filesize;
-	char* buf = new char[filesize];
+    int size = file.tellg();
+    int count = size / filesize;
+    int remain = size % filesize;
+    char* buf = new char[filesize];
 
-	file.seekp(0);
-	for (int i = 0; i < count; i++)
-	{
-		string newfilename = filename + '.' + to_string(i);
-		file.read(buf, filesize);
-		fstream fin;
-		fin.open(newfilename, ios_base::out | ios_base::binary);
-		fin.write(buf, filesize);
-		fin.close();
-		cout << "-> file " << newfilename << endl;
-	}
-	delete[] buf;
-	
-	if (remain)
-	{
-		string newfilename = filename + '.' + to_string(count);
-		fstream fin;
-		fin.open(newfilename, ios_base::out | ios_base::binary);
-		
-		char ch;
-		while (file.get(ch))
-			fin << ch;
-		
-		fin.close();
-		cout << "-> file " << newfilename << endl;
-	}
-	
-	cout << "Split done" << endl;*/
+    file.seekp(0);
+    for (int i = 0; i < count; i++)
+    {
+       string newfilename = filename + '.' + to_string(i);
+       file.read(buf, filesize);
+       fstream fin;
+       fin.open(newfilename, ios_base::out | ios_base::binary);
+       fin.write(buf, filesize);
+       fin.close();
+       cout << "-> file " << newfilename << endl;
+    }
+    delete[] buf;
 
+    if (remain)
+    {
+       string newfilename = filename + '.' + to_string(count);
+       fstream fin;
+       fin.open(newfilename, ios_base::out | ios_base::binary);
 
-	// # Q3
-	
-	int filenumber;
-	cout << "Enter file number : ";
-	cin >> filenumber;
-	
-	string filename[100];
+       char ch;
+       while (file.get(ch))
+          fin << ch;
 
-	for (int i = 0; i < filenumber; i++)
-	{
-		cout << "Enter source file : ";
-		cin >> filename[i];
-	}
+       fin.close();
+       cout << "-> file " << newfilename << endl;
+    }
 
-	string targetfile;
-	cout << "Enter target file : ";
-	cin >> targetfile;
+    cout << "Split done" << endl;*/
 
-	for (int i = 0; i < filenumber; i++)
-	{
-		fstream file;
-		file.open(filename[i], ios_base::in | ios_base::out | ios_base::binary);
-	}
-	
-	fstream output;
-	output.open(targetfile, ios_base::in | ios_base::out | ios_base::binary);
-	output.seekg(0, ios_base::end);
+    // # Q3
+    int filenumber;
+    cout << "Enter file number : ";
+    cin >> filenumber;
 
-	int size = file.tellg();
-	int count = size / filesize;
-	int remain = size % filesize;
-	char* buf = new char[filesize];
+    string filename[10];
+    for (int i = 0; i < filenumber; i++)
+    {
+        cout << "Enter source file : ";
+        cin >> filename[i];
+    }
 
-	file.seekp(0);
-	for (int i = 0; i < count; i++)
-	{
-		string newfilename = filename + '.' + to_string(i);
-		file.read(buf, filesize);
-		fstream fin;
-		fin.open(newfilename, ios_base::out | ios_base::binary);
-		fin.write(buf, filesize);
-		fin.close();
-		cout << "-> file " << newfilename << endl;
-	}
-	delete[] buf;
+    string targetfile;
+    cout << "Enter target file : ";
+    cin >> targetfile;
+    fstream mergeFile;
+    mergeFile.open(targetfile, ios_base::in | ios_base::out | ios_base::binary | ios_base::app);
+
+    fstream splitFile[10];
+    int size[10];
+    for (int i = 0; i < filenumber; i++)
+    {
+        splitFile[i].open(filename[i], ios_base::in | ios_base::out | ios_base::binary);
+        splitFile[i].seekg(0, ios_base::end);
+        size[i] = splitFile[i].tellg();
+        splitFile[i].seekg(0);
+    }
+
+    for (int i = 0; i < filenumber; i++)
+    {
+        char* buf = new char[size[i]];
+
+        splitFile[i].read(buf, size[i]);
+        mergeFile.write(buf, size[i]);
+
+        splitFile[i].close();
+        delete[] buf;
+    }
+
+    cout << "Combine Done." << endl;
 
 
-	return 0;
+    return 0;
 }
-
