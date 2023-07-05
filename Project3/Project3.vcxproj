@@ -127,14 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="20230619_Q3.cpp" />
     <ClCompile Include="20230619_stacktp.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="20230615_hanoiTower.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="20230616_8queen.cpp" />
     <ClCompile Include="20230616_클래스상속.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -159,9 +154,6 @@
     <ClCompile Include="20230621_Q1.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="20230621_단순선택정렬.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="20230621_예외처리.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -181,9 +173,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="20230622_list클래스.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="20230622_단순삽입정렬.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="20230623_Q2.cpp">
@@ -218,7 +207,6 @@
     </ClCompile>
     <ClCompile Include="MyPoint.cpp" />
     <ClCompile Include="Rectangle2D.cpp" />
-    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="StopWatch.cpp" />
     <ClCompile Include="tv.cpp" />
     <ClCompile Include="worker0.cpp" />
@@ -230,7 +218,6 @@
     <ClInclude Include="QueueTp.h" />
     <ClInclude Include="QueueTp2.h" />
     <ClInclude Include="Rectangle2D.h" />
-    <ClInclude Include="Stack.h" />
     <ClInclude Include="stacktp.h" />
     <ClInclude Include="StopWatch.h" />
     <ClInclude Include="tv.h" />

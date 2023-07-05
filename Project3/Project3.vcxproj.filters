@@ -21,7 +21,7 @@
     <ClCompile Include="20230616_use클래스상속.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="20230616_Q1.cpp">
+    <ClCompile Include="20230616_도형이용.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Circle2D.h">
